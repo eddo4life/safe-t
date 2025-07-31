@@ -16,20 +16,22 @@ This project was designed to be **accessible**, **educational**, and **easy to r
 - Detects air pollution with the **MQ-135 gas sensor**
 - Real-time data display on a **16x2 LCD screen**
 - Visual alerts via **LEDs** (green, yellow, red)
+- **Adjustable contrast** for the LCD using a **potentiometer**
 - Modular and beginner-friendly **open-source code**
 
 ---
 
 ## 🛠 Required Components
 
-| Component         | Description                          |
-|-------------------|--------------------------------------|
-| Arduino Uno       | Main microcontroller board           |
-| DHT11             | Temperature and humidity sensor      |
-| MQ-135            | Gas sensor (CO₂, VOCs, etc.)         |
-| 16x2 LCD Display  | Displays air quality information     |
-| LEDs + Resistors  | Visual indicators for air quality    |
-| Breadboard + Wires| For non-permanent circuit assembly   |
+| Component           | Description                              |
+|---------------------|------------------------------------------|
+| Arduino Uno         | Main microcontroller board               |
+| DHT11               | Temperature and humidity sensor          |
+| MQ-135              | Gas sensor (CO₂, VOCs, etc.)             |
+| 16x2 LCD Display    | Displays air quality information         |
+| Potentiometer       | Adjusts LCD screen contrast              |
+| LEDs + Resistors    | Visual indicators for air quality status |
+| Breadboard + Wires  | For prototyping the circuit              |
 
 ---
 
