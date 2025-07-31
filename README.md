@@ -12,11 +12,11 @@ This project was designed to be **accessible**, **educational**, and **easy to r
 
 ## ⚙️ Features
 
-- Measures **temperature** and **humidity** using a **DHT11 sensor**
-- Detects air pollution with the **MQ-135 gas sensor**
+- Measures **ambient temperature** using an **analog TMP36 sensor**
+- Detects air pollution with a **gas sensor** (e.g., MQ-135 equivalent)
 - Real-time data display on a **16x2 LCD screen**
-- Visual alerts via **LEDs** (green, yellow, red)
-- **Adjustable contrast** for the LCD using a **potentiometer**
+- Visual alerts via **LEDs** (green, orange, red)
+- **Adjustable contrast** for the LCD using a **250 kΩ potentiometer**
 - Modular and beginner-friendly **open-source code**
 
 ---
@@ -25,13 +25,13 @@ This project was designed to be **accessible**, **educational**, and **easy to r
 
 | Component           | Description                              |
 |---------------------|------------------------------------------|
-| Arduino Uno         | Main microcontroller board               |
-| DHT11               | Temperature and humidity sensor          |
-| MQ-135              | Gas sensor (CO₂, VOCs, etc.)             |
+| Arduino Uno R3      | Main microcontroller board               |
+| TMP36               | Analog temperature sensor                |
+| Gas Sensor          | Detects harmful gases (CO₂, VOCs, etc.)  |
 | 16x2 LCD Display    | Displays air quality information         |
-| Potentiometer       | Adjusts LCD screen contrast              |
-| LEDs + Resistors    | Visual indicators for air quality status |
-| Breadboard + Wires  | For prototyping the circuit              |
+| 250 kΩ Potentiometer| Adjusts LCD screen contrast              |
+| LEDs + 1 kΩ Resistors| Visual indicators (green, orange, red)  |
+| Breadboard + Wires  | For assembling the prototype             |
 
 ---
 
