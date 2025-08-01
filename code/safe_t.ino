@@ -24,7 +24,6 @@ void setup() {
   
   // Initialize the LCD screen
   lcd.begin(16, 2);
-  
 
   pinMode(LED_GREEN, OUTPUT);
   pinMode(LED_YELLOW, OUTPUT);
@@ -39,7 +38,6 @@ void setup() {
 }
 
 void loop() {
-  // --- Read values from sensors ---
   
   // Read the analog value from the TMP36 sensor
   int tempAnalogValue = analogRead(TMP36_PIN);
@@ -53,8 +51,6 @@ void loop() {
   
   // Read the analog value from the Gas Sensor
   int airQualityValue = analogRead(GAS_SENSOR_PIN);
-  
-  // --- Logic for controlling LEDs and LCD screen ---
   
   lcd.clear();
   
