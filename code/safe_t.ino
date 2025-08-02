@@ -23,7 +23,7 @@ const float WARM_TEMP_TRESHOLD = 25.0;
 
 // Define thresholds for air quality alerts
 const int GOOD_AIR_THRESHOLD = 90; // Below this value, air quality is considered optimal
-const int MEDIUM_AIR_THRESHOLD = 170; // Between these values, air quality is considered average
+const int MEDIUM_AIR_THRESHOLD = 170; // Below this value, air quality is considered average
 
 void setup() {
   // Initialize serial communication for debugging
@@ -85,7 +85,7 @@ void loop() {
   if (airQualityValue < GOOD_AIR_THRESHOLD) {
     digitalWrite(LED_GREEN, HIGH);
     lcd.print("Air: OPTIMAL");
-  } else if (airQualityValue >= GOOD_AIR_THRESHOLD && airQualityValue < MEDIUM_AIR_THRESHOLD) {
+  } else if (airQualityValue < MEDIUM_AIR_THRESHOLD) {
     digitalWrite(LED_YELLOW, HIGH);
     lcd.print("Air: AVERAGE");
   } else {
