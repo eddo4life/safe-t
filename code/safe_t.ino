@@ -22,8 +22,8 @@ const float HOT_TEMP_THRESHOLD = 30.0; //Above this value, the temperature is co
 const float WARM_TEMP_TRESHOLD = 25.0; 
 
 // Define thresholds for air quality alerts
-const int GOOD_AIR_THRESHOLD = 90; // Below this value, air quality is considered optimal
-const int MEDIUM_AIR_THRESHOLD = 170; // Below this value, air quality is considered average
+const int GOOD_AIR_THRESHOLD = 285; // Below this value, air quality is considered optimal
+const int MEDIUM_AIR_THRESHOLD = 450; // Below this value, air quality is considered average
 
 void setup() {
   // Initialize serial communication for debugging
