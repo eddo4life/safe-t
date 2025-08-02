@@ -8,11 +8,18 @@ const int LED_GREEN = 9;
 const int LED_YELLOW = 8;
 const int LED_RED = 7;
 
+const int RGB_RED_LED = 10;
+const int RGB_GREEN_LED = 6;
+
 // Define the pin for the Gas Sensor's analog output
 const int GAS_SENSOR_PIN = A0;
 
 // Define the pin for the TMP36 temperature sensor
 const int TMP36_PIN = A1;
+
+// Define thresholds for temperature in celcius
+const float HOT_TEMP_THRESHOLD = 30.0; //Above this value, the temperature is considered hot/alarming
+const float WARM_TEMP_TRESHOLD = 25.0; 
 
 // Define thresholds for air quality alerts
 const int GOOD_AIR_THRESHOLD = 90; // Below this value, air quality is considered optimal
@@ -28,10 +35,12 @@ void setup() {
   pinMode(LED_GREEN, OUTPUT);
   pinMode(LED_YELLOW, OUTPUT);
   pinMode(LED_RED, OUTPUT);
+  pinMode(RGB_RED_LED, OUTPUT);
+  pinMode(RGB_GREEN_LED, OUTPUT);
   
   // Display a startup message
   lcd.clear();
-  lcd.print("Safe-T Project");
+  lcd.print("Safe-T");
   lcd.setCursor(0, 1);
   lcd.print("Starting up...");
   delay(2000);
@@ -58,6 +67,17 @@ void loop() {
   lcd.print("Temp: ");
   lcd.print(temp);
   lcd.print(" C");
+  
+  if (temp < WARM_TEMP_TRESHOLD) {
+   digitalWrite(RGB_GREEN_LED, HIGH);
+   digitalWrite(RGB_RED_LED, LOW);
+  } else if (temp < HOT_TEMP_THRESHOLD ) {
+   digitalWrite(RGB_GREEN_LED, HIGH);
+   digitalWrite(RGB_RED_LED, HIGH);
+  } else {
+   digitalWrite(RGB_GREEN_LED, LOW);
+   digitalWrite(RGB_RED_LED, HIGH);
+  }
 
   // Display air quality status on the second line and control LEDs
   lcd.setCursor(0, 1);
