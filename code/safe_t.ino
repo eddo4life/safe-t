@@ -68,14 +68,14 @@ void loop() {
   lcd.print(temp);
   lcd.print(" C");
   
+  initializeLeds();
+  
   if (temp < WARM_TEMP_TRESHOLD) {
    digitalWrite(RGB_GREEN_LED, HIGH);
-   digitalWrite(RGB_RED_LED, LOW);
   } else if (temp < HOT_TEMP_THRESHOLD ) {
    digitalWrite(RGB_GREEN_LED, HIGH);
    digitalWrite(RGB_RED_LED, HIGH);
   } else {
-   digitalWrite(RGB_GREEN_LED, LOW);
    digitalWrite(RGB_RED_LED, HIGH);
   }
 
@@ -84,17 +84,11 @@ void loop() {
 
   if (airQualityValue < GOOD_AIR_THRESHOLD) {
     digitalWrite(LED_GREEN, HIGH);
-    digitalWrite(LED_YELLOW, LOW);
-    digitalWrite(LED_RED, LOW);
     lcd.print("Air: OPTIMAL");
   } else if (airQualityValue >= GOOD_AIR_THRESHOLD && airQualityValue < MEDIUM_AIR_THRESHOLD) {
-    digitalWrite(LED_GREEN, LOW);
     digitalWrite(LED_YELLOW, HIGH);
-    digitalWrite(LED_RED, LOW);
     lcd.print("Air: AVERAGE");
   } else {
-    digitalWrite(LED_GREEN, LOW);
-    digitalWrite(LED_YELLOW, LOW);
     digitalWrite(LED_RED, HIGH);
     lcd.print("Air: POOR!");
   }
@@ -108,4 +102,12 @@ void loop() {
   
   // Short pause for system stability
   delay(2000);
+}
+
+void initializeLeds() {
+  digitalWrite(LED_GREEN, LOW);
+  digitalWrite(LED_YELLOW, LOW);
+  digitalWrite(LED_RED, LOW);
+  digitalWrite(RGB_RED_LED, LOW);
+  digitalWrite(RGB_GREEN_LED, LOW);
 }
