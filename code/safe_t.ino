@@ -119,7 +119,6 @@ void initializeLeds() {
 }
 
 void handleReset() {
-  Serial.println("System reset triggered");
   initializeLeds();
   lcd.clear();
   lcd.print("System Reset");
